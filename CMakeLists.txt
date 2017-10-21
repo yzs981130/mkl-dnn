@@ -22,6 +22,11 @@ if(POLICY CMP0048)
     cmake_policy(SET CMP0054 OLD)
 endif()
 
+# turn on debug mode
+set(CMAKE_BUILD_TYPE "Debug")
+set(CMAKE_CXX_FLAGS_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
+set(CMAKE_CXX_FLAGS_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
+
 set(PROJECT_NAME "Intel(R) MKL-DNN")
 set(PROJECT_FULL_NAME "Intel(R) Math Kernel Library for Deep Neural Networks (Intel(R) MKL-DNN)")
 set(PROJECT_VERSION "0.10")
